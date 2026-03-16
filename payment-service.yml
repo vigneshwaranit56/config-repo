@@ -36,6 +36,7 @@ spring:
    bootstrap-servers: localhost:9092
    consumer:
      group-id: payment-service
+     auto-offset-reset: earliest
      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
      properties:
@@ -53,11 +54,11 @@ app:
       ordercreate: orders-create
       partition: 3
       replicate: 1
-      paymentSuccess: payment-succed
+      paymentSuccess: payment-success
       paymentFailed: payment-failed
     dlt:
-      order: orders-topic3.DLT
-      ordercreate: orders-create.DLT
+      order: orders-topic3-dlt
+      ordercreate: orders-create-dlt
       partition: 3
       replicate: 1  
     

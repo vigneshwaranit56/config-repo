@@ -52,7 +52,22 @@ spring:
     oauth2:
       resourceserver:
         jwt:
+          issuer-uri: tester
           # For HS256 demo. In prod, prefer JWK set URI / public key.
           secret-key: MysuperSecretKeyForJWT1234567890098765432dffgdfsgfgsfgsdfgfsfgffgsfg456w5w465w4rggfg4453
 
+jwt:
+ access:
+  secret: MysuperSecretKeyForJWT1234567890098765432dffgdfsgfgsfgsdfgfsfgffgsfg456w5w465w4rggfg4453
+  expiration: 9000   # 15 min +
+ refresh:
+  secret: MysuperSecretKeyForJWT123456789009876hd7532dffgdfsgfgsfgsdfgfsfgffgsfg456w5w465w4rggfg4453
+  expiration: 604800  # 7 days
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/   
+ 
 

@@ -36,20 +36,8 @@ management:
 
 logging:
   pattern:
-    level: "%5p [${spring.application.name},traceId=%X{traceId},spanId=%X{spanId}]"
+    level: "%5p [${spring.application.name:},traceId=%X{traceId},spanId=%X{spanId},correlationId=%X{correlationId}]"
 
- 
-
-jwt:
- access:
-  secret: MysuperSecretKeyForJWT1234567890098765432dffgdfsgfgsfgsdfgfsfgffgsfg456w5w465w4rggfg4453
-  expiration: 9000   # 15 min +
- refresh:
-  secret: MysuperSecretKeyForJWT123456789009876hd7532dffgdfsgfgsfgsdfgfsfgffgsfg456w5w465w4rggfg4453
-  expiration: 604800  # 7 days
- roles:
- admin: ROLE_ADMIN
- user: ROLE_USER
  
 
     
